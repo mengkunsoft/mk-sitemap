@@ -111,7 +111,7 @@ function mk_get_html_sitemap() {
 </body>
 </html>
 <?php
-    return ob_get_contents();
     ob_clean();
+	return ob_get_contents();
 }
 ?>

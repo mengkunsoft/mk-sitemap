@@ -71,9 +71,8 @@ endforeach;
 ?>
 </urlset>
 <?php
-    return ob_get_contents();
     ob_clean();
-
+	return ob_get_contents();
 }
 
 ?>

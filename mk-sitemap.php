@@ -26,7 +26,7 @@ function mk_sitemap_refresh() {
 if ( defined('ABSPATH') ) {
     // 挂载钩子
     add_action('publish_post', 'mk_sitemap_refresh');
-    // add_action('save_post', 'mk_sitemap_refresh');
+    add_action('save_post', 'mk_sitemap_refresh');
     add_action('edit_post', 'mk_sitemap_refresh');
     add_action('delete_post', 'mk_sitemap_refresh');
 }
