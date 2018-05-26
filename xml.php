@@ -71,8 +71,9 @@ endforeach;
 ?>
 </urlset>
 <?php
+    $sitemap = ob_get_contents();
     ob_clean();
-	return ob_get_contents();
+    return $sitemap;
 }
 
 ?>
