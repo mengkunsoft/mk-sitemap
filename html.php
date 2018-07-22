@@ -40,6 +40,7 @@ function mk_get_html_sitemap() {
     .container{max-width:900px;margin:0 auto;position:relative;padding:5px}
     .page-title{font-weight:600;font-size:30px;text-align:center;padding:40px;position:relative}
     .page-title:after{content:"";border-bottom:3px #bdbdbd solid;position:absolute;left:50%;top:50%;padding-top:60px;transform:translate(-50%,-50%);width:60px;z-index:-1}
+    .page-title:hover>a{color: #848484;}
     .section-title{font-weight:500;font-size:16px;position:relative;margin:15px 0 10px;color:#fff;background:#565555;display:inline-block;padding:5px 8px;border-radius:5px}
     .post-lists li{padding:4px 0}
     .post-lists li>a{display:block}
@@ -59,8 +60,12 @@ function mk_get_html_sitemap() {
     ?>
     <h2 class="section-title">文章 / Article</h2>
     <ul class="sitemap-lists post-lists clear-fix">
-        <?php foreach($posts as $post) : ?>
-        <li><a href="<?php echo get_permalink($post->ID); ?>" title="<?php echo $post->post_title; ?>" target="_blank"><?php echo $post->post_title; ?></a></li>
+        <?php 
+            foreach($posts as $post) : 
+                $title = $post->post_title;
+                $title = htmlspecialchars($title);
+        ?>
+        <li><a href="<?php echo get_permalink($post->ID); ?>" title="<?php echo $title; ?>" target="_blank"><?php echo $title; ?></a></li>
         <?php endforeach; ?>
     </ul>
     <?php endif; ?>
@@ -71,8 +76,12 @@ function mk_get_html_sitemap() {
     ?>
     <h2 class="section-title">页面 / Page</h2>
     <ul class="sitemap-lists post-lists clear-fix">
-        <?php foreach($pages as $page) : ?>
-        <li><a href="<?php echo get_page_link($page->ID); ?>" title="<?php echo $page->post_title; ?>" target="_blank"><?php echo $page->post_title; ?></a></li>
+        <?php 
+            foreach($pages as $page) : 
+                $title = $page->post_title;
+                $title = htmlspecialchars($title);
+        ?>
+        <li><a href="<?php echo get_page_link($page->ID); ?>" title="<?php echo $title; ?>" target="_blank"><?php echo $title; ?></a></li>
         <?php endforeach; ?>
     </ul>
     <?php endif; ?>
@@ -83,8 +92,12 @@ function mk_get_html_sitemap() {
     ?>
     <h2 class="section-title">分类 / Category</h2>
     <ul class="sitemap-lists category-lists clear-fix">
-        <?php foreach ($categorys as $category) : ?>
-        <li><a href="<?php echo get_term_link($category, $category->slug); ?>" title="<?php echo $category->name; ?>" target="_blank"><?php echo $category->name; ?></a></li>
+        <?php 
+            foreach ($categorys as $category) : 
+                $title = $category->name;
+                $title = htmlspecialchars($title);
+        ?>
+        <li><a href="<?php echo get_term_link($category, $category->slug); ?>" title="<?php echo $title; ?>" target="_blank"><?php echo $title; ?></a></li>
         <?php endforeach; ?>
     </ul>
     <?php endif; ?>
@@ -95,8 +108,12 @@ function mk_get_html_sitemap() {
     ?>
     <h2 class="section-title">标签 / Tag</h2>
     <ul class="sitemap-lists tag-lists clear-fix">
-        <?php foreach ($tags as $tag) : ?>
-        <li><a href="<?php echo get_term_link($tag, $tag->slug); ?>" title="<?php echo $tag->name; ?>" target="_blank"><?php echo $tag->name; ?></a></li>
+        <?php 
+            foreach ($tags as $tag) : 
+                $title = $tag->name;
+                $title = htmlspecialchars($title);
+        ?>
+        <li><a href="<?php echo get_term_link($tag, $tag->slug); ?>" title="<?php echo $title; ?>" target="_blank"><?php echo $title; ?></a></li>
         <?php endforeach; ?>
     </ul>
     <?php endif; ?>

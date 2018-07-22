@@ -9,7 +9,7 @@ function mk_get_xml_sitemap() {
     <!-- generated-on=<?php echo get_lastpostdate('blog'); ?> -->
     <url>
         <loc><?php echo get_home_url(); ?></loc>
-        <lastmod><?php echo gmdate('Y-m-d\TH:i:s+00:00', strtotime(get_lastpostmodified(GMT))); ?></lastmod>
+        <lastmod><?php echo gmdate('Y-m-d\TH:i:s+00:00', strtotime(get_lastpostmodified('GMT'))); ?></lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
