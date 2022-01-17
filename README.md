@@ -1,16 +1,21 @@
 mk-sitemap
 ========
-mk-sitemap 是一个简洁的 WordPress 站点地图插件。
+mk-sitemap 是一款简洁的 WordPress 站点地图插件。
 
-本插件无需任何设置，直接在 WordPress 后台上传并启用即可。每次发表、修改、或删除文章时，会自动触发更新站点地图的操作，在站根目录生成 `sitemap.html` 和 `sitemap.xml` 两个文件。
+本插件无需任何设置，直接在 WordPress 后台上传并启用即可。每次发表、修改、或删除文章时，会自动触发更新站点地图的操作，在站根目录生成 `sitemap.html` 和 ~~`sitemap.xml`~~ 两个文件。
 
 [![GitHub issues](https://img.shields.io/github/issues/mengkunsoft/mk-sitemap.svg)](https://github.com/mengkunsoft/mk-sitemap/issues) [![GitHub forks](https://img.shields.io/github/forks/mengkunsoft/mk-sitemap.svg)](https://github.com/mengkunsoft/mk-sitemap/network) [![GitHub stars](https://img.shields.io/github/stars/mengkunsoft/mk-sitemap.svg)](https://github.com/mengkunsoft/mk-sitemap/stargazers) [![GitHub license](https://img.shields.io/github/license/mengkunsoft/mk-sitemap.svg)](https://github.com/mengkunsoft/mk-sitemap/blob/master/LICENSE)
+
+
+### 注意事项
+
+因新版的 WordPress 已内置 xml 站点地图，因此本插件不再生成 xml 格式的站点地图。如果之前有用过本插件并已在根目录生成了 sitemap.xml，请手动将其删除。
 
 
 ### 在线演示
 -----
 
-[sitemap.html](https://mkblog.cn/sitemap.html)、[sitemap.xml](https://mkblog.cn/sitemap.xml)
+[sitemap.html](https://mkblog.cn/sitemap.html)、~~[sitemap.xml](https://mkblog.cn/sitemap.xml)~~
 
 
 ### 常见问题
@@ -26,6 +31,11 @@ mk-sitemap 是一个简洁的 WordPress 站点地图插件。
 
 ### 更新日志
 -----
+
+#### v1.1.0 `2022/1/17`
+- 因 WordPress 已内置 xml 站点地图，因此本插件不再生成 xml 站点地图；
+- 新增启用插件时自动更新站点地图。
+
 #### v1.0.1 `2018/7/22`
 - 修复 RSS 生成报错；
 - 修复 XSS 漏洞。
